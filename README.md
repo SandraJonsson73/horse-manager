@@ -66,7 +66,8 @@ Appen körs på `http://localhost:5173/`
 
 ### Filstruktur
 
-`horse-manager/
+```text
+horse-manager/
 ├── src/
 │   ├── components/
 │   │   ├── HorseList.jsx      # Visar lista över hästar
@@ -80,7 +81,7 @@ Appen körs på `http://localhost:5173/`
 ├── public/                    # Statiska filer
 ├── index.html                 # HTML-template
 ├── vite.config.js             # Vite-konfiguration
-└── README.md`
+└── README.md```
 
 ## Responsivitet
 Appen är testad på två breddpunkter:
