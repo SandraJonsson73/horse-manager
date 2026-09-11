@@ -27,7 +27,8 @@ React-webbapp för registrering och hantering av hästar. Responsiv design som f
 
 1. **Klona repot** (om du ännu inte gjort det):
    ```powershell
-   cd c:\Users\stall\source\repos\Webbapplikation\horse-manager
+   https://github.com/SandraJonsson73/horse-manager.git
+   cd horse-manager
    ```
 
 2. Installera dependencies:
