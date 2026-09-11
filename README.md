@@ -81,7 +81,8 @@ horse-manager/
 ├── public/                    # Statiska filer
 ├── index.html                 # HTML-template
 ├── vite.config.js             # Vite-konfiguration
-└── README.md```
+└── README.md
+```
 
 ## Responsivitet
 Appen är testad på två breddpunkter:
