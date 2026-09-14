@@ -20,7 +20,6 @@ export default function HorseForm({ editingHorse, onSave, onCancel, loading }) {
         owner: editingHorse.owner,
       });
     } else {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData({
         name: '',
         breed: '',
