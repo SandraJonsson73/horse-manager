@@ -3,12 +3,16 @@ import HorseList from './components/HorseList';
 import HorseForm from './components/HorseForm';
 import { horses } from './api/horses';
 import './App.css';
+import ImageModal from './components/ImageModal';
+
 
 export default function App() {
   const [horsesList, setHorsesList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [editingHorse, setEditingHorse] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const fetchHorses = async () => {
     setLoading(true);
@@ -57,6 +61,16 @@ export default function App() {
     setEditingHorse(null);
   };
 
+  const openModal = (imagePath) => {
+    setSelectedImage(imagePath);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
+
   useEffect(() => {
     fetchHorses();
     // Varningen är ett falskt positivt — fetchHorses() är ett legitim 
@@ -87,7 +101,14 @@ export default function App() {
           horses={horsesList}
           onEdit={handleEdit}
           loading={loading}
+          onImageClick={openModal}
         />
+        <ImageModal 
+          isOpen={isModalOpen} 
+          imagePath={selectedImage} 
+          onClose={closeModal} 
+        />
+
       </main>
     </div>
   );

@@ -1,4 +1,4 @@
-export default function HorseList({ horses, onEdit, loading }) {
+export default function HorseList({ horses, onEdit, loading, onImageClick }) {
   if (loading) return <p>Laddar hästar...</p>;
   if (horses.length === 0) return <p>Ingen häst registrerad ännu.</p>;
 
@@ -8,12 +8,14 @@ export default function HorseList({ horses, onEdit, loading }) {
       <div className="horses-grid">
         {horses.map((horse) => (
           <div key={horse.id} className="horse-card">
-            {horse.imagePath && (
-              <img
-                src={`http://localhost:5280${horse.imagePath}`}
-                alt={horse.name}
-                className="horse-image"
-              />
+        {horse.imagePath && (
+          <img
+            src={`http://localhost:5280${horse.imagePath}`}
+            alt={horse.name}
+            className="horse-image"
+            onClick={() => onImageClick(horse.imagePath)}
+            style={{ cursor: 'pointer' }}
+          />
             )}
             <div className="horse-info">
               <h3>{horse.name}</h3>
